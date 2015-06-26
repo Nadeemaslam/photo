@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{{ url }}">&lt;&lt; back</a>
+<!-- Image -->
+<ul>
+    {% if object.title %}
+        <div class="title">{{ object.title }}</div>
+    {% endif %}
+
+    <ul>
+    	{% if object.image%}
+        <img border="0" alt="" src="{{ media_url }}{{ object.image.url}}" height="250px" width="250px" />
+        {% endif %}
+    </ul>
+</ul>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="main">
+<!-- Images  -->
+<ul>
+    <div class="title">{{ album.title }}</div>
+    <ul>
+        {% for img in images.object_list %}
+            <a href="{{ media_url }}{{ img}}"><img border="0" alt=""
+                src="{{ media_url }}{{ img }}" /></a>
+        {% endfor %}
+    </ul>
+</ul>
+</div>
+{% endblock %}
