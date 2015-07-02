@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+	<div class="signup-div">
+				{% if registered %}
+				        <A href="/photo/">photo App</A> says: thank you for registering.
+				{% else %}
+							<div class="col-md-4"></div>
+							<div class="col-md-4">
+							  <form class="form-horizontal" role="form" id="user_form" method="post" action="/photo/register/" enctype="multipart/form-data">
+							  	{% csrf_token %}
+							  			<h3>signup here!</h3>
+							    		<div class="form-group">
+										        <div class="col-sm-12 username">
+										        <i class="fa fa-user"></i>
+										        <input name="username" type="text" class="form-control" id="username" placeholder="Enter Username">
+										        </div>
+										    	{{ uform.username.errors }}
+										   </div>
+
+										  <div class="form-group">
+										      <div class="col-sm-12 email">
+										      	<i class="fa fa-envelope"></i>
+
+										        <input  name="email" type="email" class="form-control" id="email" placeholder="Enter email">
+										      </div>
+										      {{ uform.email.errors }}
+							    		</div>
+										    <div class="form-group">
+										      <div class="col-sm-12 password">
+										      	<i class="fa fa-unlock"></i>           
+										        <input  name="password"  type="password" class="form-control" id="pwd" placeholder="Enter password">
+										      </div>
+										      {{ uform.password.errors }}
+										    </div>
+
+
+										    <div class="form-group">        
+										      <div class="col-sm-12">
+										        <div class="checkbox">
+										          <label><input type="checkbox"> Remember me</label>
+										        </div>
+										      </div>
+										    </div>
+
+										    <div class="form-group">        
+										      <div class=" col-sm-12">
+										       <button type="submit" class="btn btn-success btn-block" >Signup</button>
+										      </div>
+										    </div>
+							  </form>
+							</div>
+							<div class="col-md-4"></div>
+
+
+
+
+
+				{% endif %}
+	</div>
+</div>
+{% endblock %}

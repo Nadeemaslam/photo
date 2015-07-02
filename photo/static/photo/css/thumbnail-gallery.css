@@ -1,0 +1,180 @@
+
+body {
+/*    padding-top: 70px;  Required padding for .navbar-fixed-top. Change if height of navigation changes. 
+*/    
+	/*background-image:url(../images/seamless1.jpg);*/
+	  background-color: #fff !important;
+}
+
+
+
+.thumb {
+    margin-bottom: 30px;
+}
+
+.single-image{
+
+	display:inline-block;
+	float:left;
+}
+
+.page-header-div {
+
+	color:#fff;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+
+
+.image img {
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -o-transition: all 1s ease; /* IE 9 */
+    -ms-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+       
+}
+.image:hover img {
+    -webkit-transform:scale(1.25); /* Safari and Chrome */
+    -moz-transform:scale(1.25); /* Firefox */
+    -ms-transform:scale(1.25); /* IE 9 */
+    -o-transform:scale(1.25); /* Opera */
+     transform:scale(1.25);
+}
+.image {
+  height:150px;
+  width: 250px;
+  overflow:hidden;
+}
+@media screen and (max-width:768px){
+	.image {
+		width:150px;
+		height:100px;
+	}
+}
+
+.image img{
+	width:100% !important;
+	height:100%;
+}
+
+.title {
+	text-transform: capitalize;	
+	font-size: 22px;
+}
+
+.description {
+	color:#fff;
+
+}
+
+.single-image-view {
+	/*height:400px;
+	width:400px;*/
+}
+
+.single-image-view{
+    max-width:98%;
+    padding:5px; /* A percentage that, when doubled and added to the above, makes 100%. */
+    background:#fff; /* Color of the faux border. */
+}
+
+/*@media screen and (max-width: 300px) {
+   .single-image-view{
+       height:350px;
+
+    }*/
+.signup-div {
+
+	color: green;
+
+}
+.signup-div p label{
+
+	color: #fff;
+}
+.signup-div h3 {
+	font: bold 32px Arial,Tahoma,Helvetica,FreeSans,sans-serif;
+	text-align:center;
+	color: #fff;
+	padding: 0 0 20px 20px;
+	text-transform:capitalize;
+}
+
+.login-div {
+	padding-top: :100px;
+
+}
+
+.username {
+	position: relative;
+}
+.username input{
+	padding-left:40px;
+}
+.username i{
+	position: absolute;
+	padding: 10px 12px;
+    pointer-events: none;
+    background-color:#449D44;
+    border-radius: 3px 0px 0px 3px;
+}
+
+.password {
+	position: relative;
+}
+.password input{
+	padding-left:40px;
+}
+.password i{
+	position: absolute;
+	padding: 10px 12px;
+    pointer-events: none;
+    background-color:#449D44;
+    border-radius: 3px 0px 0px 3px;
+}
+
+.email {
+	position: relative;
+}
+.email input{
+	padding-left:40px;
+}
+.email i{
+	position: absolute;
+	padding: 10px 12px;
+    pointer-events: none;
+    background-color:#449D44;
+    border-radius: 3px 0px 0px 3px;}
+
+.login h3 {
+	font: bold 24px Arial,Tahoma,Helvetica,FreeSans,sans-serif;
+	text-align:center;
+	color: #fff;
+	text-transform:capitalize;
+}
+
+.login span a {
+    color: #fff;
+    font-size: 22px;
+}
+.login button {
+	font: bold 16px sans-serif;
+	text-transform: capitalize;
+
+}
+
+@media screen and (max-width:768px){
+	.login h3 {
+		font-size:16px;
+	}
+}
+
+@media screen and (max-width:768px){
+	.login span a {
+		font-size:16px;
+	}
+}

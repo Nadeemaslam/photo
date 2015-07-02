@@ -1,0 +1,19 @@
+	{% extends 'base.html' %}
+	{% block content %}
+	<div class="container">
+		<form action='' method='post' class="form">
+		    {%csrf_token%}
+		<p> <input id="id_title" type="text" name="title" maxlength="60" placeholder="title"></input></p>
+		 <p><textarea id="id_description" rows="10" name="description" maxlength="200" cols="40" placeholder="description"></textarea></p>
+		  <p><input type="file" name="image" placeholder="Browse"/></p>
+
+		<p>  <select id="id_albums" name="albums" multiple="multiple">
+			    <option value="1">photos</option>
+			    <option value="2">new</option>
+			    <option value="3">cars</option>
+          </select>
+		</p>
+		 <span><input type='submit' class="btn btn-success btn-block" value="Done" /></span>
+		</form>
+	</div>
+	{% endblock %}

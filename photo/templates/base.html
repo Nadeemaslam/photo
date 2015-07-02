@@ -1,25 +1,65 @@
+<!-- <!DOCTYPE HTML> -->
 {% load staticfiles %}
 <html>
-<head> <title>{% block title %}photoapp{% endblock %}</title> </head>
+<head> <title>{% block title %}Photo App{% endblock %}</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="{% static 'photo/css/bootstrap.min.css' %}"/> 
+    <link rel="stylesheet" type="text/css" href="{% static 'photo/css/thumbnail-gallery.css' %}"/>
+   
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+</head>
 
 <body>
-    <div id="sidebar"> {% block sidebar %} {% endblock %} </div>
-    <div id="container">
-        <div id="menu">
-            {% block nav-global %}
+   
+ 
+        <!-- Navigation -->
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Photo App</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/photo/">Home</a></li>
+        <li><a href="#">Page 1</a></li>
+        <li><a href="#">Page 2</a></li>      
+        <li><a href="#">Page 3</a></li>
+        
+     </ul>
+     <ul class="nav navbar-nav navbar-right">
+        <!-- <li><a href="{% url 'register' %}">Signup</a></li>
+        <li><a href="{% url 'login' %}">login</a></li> -->
 
-                <!-- MENU -->
-                <h3>photo app</h3>
-           
-
-            {% endblock %}
-        </div>
+        {% if user.is_authenticated %}
+                <li><a href="#">Welcome {{ user.username }}  |</a></li>
+                
+                <li><a href="/photo/logout/">Logout</a></li>
+        {% else %}
+            <li><a href="{% url 'register' %}">Signup</a></li>
+            <li><a href="{% url 'login' %}">login</a></li>
+        {% endif %}
+     </ul>
+             
+                
+            
+    </div>
+  </div>
+</nav>
 
         <div id="content">
             {% block content %}{% endblock %}
         </div>
-    </div>
 
+<script type="text/javascript" src="{% static 'photo/js/jquery-1.11.3.js'%}"/></script>
+<script src="{% static 'photo/js/bootstrap.min.js' %}"> </script>
 </body>
-</html>
 </html>

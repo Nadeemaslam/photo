@@ -1,22 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="main">
+    <div class="container">
 
-        <!-- Albums  -->
-        <ul>
-            {% for album in albums.object_list %}
-                <div class="title">{{ album.title }} ({{ album.image_set.count }} images)</div>
-                <ul>
-                    {% for img in album.images %}
-                        <a href="/photo/image/{{ img.id}}"><img height="250px" width="250px" alt=""
-                            src="{{ media_url }}{{ img }}" /></a>
-                       <!-- <h5><a href="/photo/image/{{ pic.id }}">{{ album.title }}</a></h5> -->     
-                    {% endfor %}
-                </ul>
-            {% endfor %}
-        </ul>
+           
 
+                    {%block Content%}
+                        <form action="/upload/" method="post">
+                            <a href="{% url 'upload' %}" class="btn btn-success">Add Image</a>
+                        </form>
+                
+                    {%endblock%} 
+                      
+                        <ul >
+                            {% for album in albums.object_list %}
+                                <div class="title"><a href="/photo/album/{{album.id}}">{{ album.title }} ({{ album.image_set.count }} images)</a></div>
+                              
+                                    <div class="col-md-12">
+                                    {% for img in album.images %}
+                                    <div class="col-md-3 image-div" >
+                                        <a  class="thumbnail image" href="/photo/image/{{ img.id}}"><img class="img-responsive" alt=""
+                                            src="{{ media_url }}{{ img }}" /></a>
+                                    </div> 
+                                    {% endfor %}
+                                    </div> 
+                                
+                               
+                            {% endfor %}
+
+                            
+                        </ul>
+                        
         <!-- Next/Prev page links  -->
         {% if albums.object_list and albums.paginator.num_pages > 1 %}
         <div class="pagination">
@@ -35,7 +49,7 @@
             </span>
         </div>
         {% endif %}
-
+    </div>
     </div>
 
 {% endblock %}

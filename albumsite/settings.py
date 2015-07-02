@@ -107,3 +107,12 @@ STATIC_ROOT = '/home/nadeem/workspace/albumsite/static/'
 
 MEDIA_ROOT = '/home/nadeem/workspace/albumsite/media/'
 MEDIA_URL = '/media/'
+
+PASSWORD_HASHERS = (
+        'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+        'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+        'django.contrib.auth.hashers.BCryptPasswordHasher',
+        'django.contrib.auth.hashers.SHA1PasswordHasher',
+        'django.contrib.auth.hashers.MD5PasswordHasher',
+        'django.contrib.auth.hashers.CryptPasswordHasher',
+)

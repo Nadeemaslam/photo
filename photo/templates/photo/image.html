@@ -1,17 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<a href="{{ url }}">&lt;&lt; back</a>
 <!-- Image -->
-<ul>
-    {% if object.title %}
-        <div class="title">{{ object.title }}</div>
-    {% endif %}
+<div class="container">
+		
+		    <ul class="row">
+		    	{% if object.image%}
+		        <img class="single-image-view col-md-4 img-responsive"  alt="" src="{{ media_url }}{{ object.image.url}}"  />
+		        <div class="description col-md-8">
+		        	{% if object.title %}
+		             <div class="title">{{ object.title }}</div>
+		            {% endif %}
 
-    <ul>
-    	{% if object.image%}
-        <img border="0" alt="" src="{{ media_url }}{{ object.image.url}}" height="250px" width="250px" />
-        {% endif %}
-    </ul>
-</ul>
+
+		        	<p>{{object.description}}</p>
+		        </div>
+		        {% endif %}
+		    </ul>
+		
+</div>
 {% endblock %}

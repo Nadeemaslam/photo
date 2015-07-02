@@ -6,11 +6,15 @@
 <ul>
     <div class="title">{{ album.title }}</div>
     <ul>
+    	<div class="col-md-12">
         {% for img in images.object_list %}
-            <a href="{{ media_url }}{{ img}}"><img border="0" alt=""
+        <div class="col-md-3 " >
+            <a  class="thumbnail image" href="/photo/image/{{img.id}}"><img class="img-responsive" border="0" alt=""
                 src="{{ media_url }}{{ img }}" /></a>
+         </div>
         {% endfor %}
+        </div>
     </ul>
 </ul>
 </div>
-{% endblock %}
+{% endblock %} 
